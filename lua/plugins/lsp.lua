@@ -3,7 +3,18 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        {
+            "williamboman/mason-lspconfig.nvim",
+            opts = {
+                ensure_installed = {
+                    "clangd",
+                    "pyright",
+                    "lua_ls",
+                    "bashls",
+                    "cmake",
+                },
+            },
+        },
     },
     config = function()
         local lspconfig = require("lspconfig")
