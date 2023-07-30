@@ -2,7 +2,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", },
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        { "nvim-treesitter/nvim-treesitter-context", opts = { enable = true}, },
+    },
     cmd = "TSUpdateSync",
     config = function()
         local configs = require("nvim-treesitter.configs")
