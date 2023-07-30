@@ -15,6 +15,7 @@ return {
                 },
             },
         },
+        { "folke/neoconf.nvim", cmd = "Neoconf", opts = {}, },
     },
     config = function()
         local lspconfig = require("lspconfig")
